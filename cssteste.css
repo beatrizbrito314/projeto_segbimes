@@ -1,0 +1,12 @@
+body{
+    width: 80%;
+    font-size: 20px;
+    margin: auto;
+}
+table{
+    width: 100%;
+    border: 1px solid;
+}
+table th{
+    background-color: rgb(160, 182, 182);
+}
