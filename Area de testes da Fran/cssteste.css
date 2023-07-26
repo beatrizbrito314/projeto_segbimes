@@ -1,0 +1,103 @@
+body{
+    width: 80%;
+    font-size: 20px;
+    margin: auto;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 20px;
+    }
+    
+    .div1 { 
+        width: 100%;
+        grid-area: 1 / 1 / 2 / 4; 
+    }
+    .div2 { 
+        grid-area: 2 / 1 / 3 / 4; 
+    }
+    .div3 { 
+        grid-area: 3 / 1 / 4 / 4; 
+    }
+    .div4 { 
+        grid-area: 4 / 1 / 5 / 4; 
+    }
+    .div5 { 
+        grid-area: 5 / 1 / 6 / 4; 
+    }
+
+.grid2{
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 20px;
+}
+.div6 { grid-area: 1 / 1 / 2 / 2; }
+.div7 { grid-area: 1 / 2 / 2 / 3; }
+.div8 { grid-area: 1 / 3 / 2 / 4; }
+footer {
+    position: fixed;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    background: #6cf;
+}
+table{
+    width: 100%;
+    border: 1px solid;
+}
+table th{
+    background-color: rgb(160, 182, 182);
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+a:hover:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
