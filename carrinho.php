@@ -3,6 +3,7 @@ session_start();
 $ni=0;
 
 $_SESSION['itens'] = array();
+$_SESSION['valortotal']=0.0;
 $valortotal= 0.0;
 
 if(isset($_POST["comprar"])){
@@ -13,7 +14,7 @@ if(isset($_POST["comprar"])){
             $qtd= $_POST['qtd'.$i];
             $preco= $_POST['preco'.$i];
 
-            //$valortotal += ($preco * $qtd);
+            $valortotal += ($preco * $qtd);
 
             //echo $i. " X " . $desc . "<br>";
 
@@ -33,6 +34,8 @@ if($ni>0){
 
     }
 }
+echo $valortotal;
+$_SESSION['valortotal']= $valortotal;
 }
 ?>
 <!DOCTYPE html>
