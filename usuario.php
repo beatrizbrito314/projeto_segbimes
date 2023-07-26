@@ -24,12 +24,15 @@ session_start();
                 <td colspan="2">Dados do Usuário</td>
             </tr>
             <tr>
+                <td>Usuário</td>
                 <td></td>
             </tr>
             <tr>
+                <td>Nome Completo</td>
                 <td></td>
             </tr>
             <tr>
+                <td>Endereço</td>
                 <td></td>
             </tr>
         </table>
