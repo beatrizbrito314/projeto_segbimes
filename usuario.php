@@ -21,20 +21,54 @@ session_start();
     <form action="usuario.php" method="post">
         <table>
             <tr>
-                <td colspan="2">Dados do Usuário</td>
+                <th colspan="2">Dados do Usuário</th>
             </tr>
             <tr>
                 <td>Usuário</td>
-                <td></td>
+                <td><input type="text" name="user" readonly ></td>
             </tr>
             <tr>
                 <td>Nome Completo</td>
-                <td></td>
+                <td><input type="text" name="nome" readonly ></td>
             </tr>
             <tr>
                 <td>Endereço</td>
-                <td></td>
+                <td><input type="text" name="end" readonly ></td>
             </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="logar" value="logar">
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colpsan="5"> Itens da compra</th>
+            </tr>
+            <tr>
+                <th>#</th>
+                <th>Numero Item</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+            </tr>
+            <?php
+                $i=0;
+                if(isset($_SESSION['itens'])){
+                    foreach($_SESSION ['itens'] as $item){
+                        
+            ?>
+            <tr>
+                <td><?php echo $i ?></td>
+                <td><?php echo $item['ni'];?><td>
+                <td><?php echo $item['desc'];?></td>
+                <td><?php echo $item['qtd'];?></td>
+                <td><?php echo $item['preco'];?></td>
+            </tr>
+            <?php
+                    }
+                }
+            ?>
         </table>
     </form>
 
