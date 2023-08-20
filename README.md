@@ -1,2 +1,2 @@
-# projeto_segbimes
+# carrinho_compras
 Sistema de Compras
