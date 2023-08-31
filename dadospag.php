@@ -60,23 +60,23 @@ session_start();
             </tr>
             <tr>
                 <td>#</td>
-                <td><input type="radio" name="metPag" value="deb-avista"></td>
+                <td><input type="radio" name="metPag" value="deb_avista"></td>
                 <td>Debito à Vista</td>
                 <td><input type="text" name="numCartão_avista" value=""></td>
                 <td>Numero do Cartão</td>
             </tr>
             <tr>
                 <td>#</td>
-                <td><input type="radio" name="metPag" value="cred-avista"></td>
+                <td><input type="radio" name="metPag" value="cred_avista"></td>
                 <td>Crédito à Vista</td>
                 <td><input type="text" name="numCartão_credito" value=""></td>
                 <td>Numero do Cartão</td>
             </tr>
             <tr>
                 <td>#</td>
-                <td><input type="radio" name="metPag" value="pix-avista"></td>
+                <td><input type="radio" name="metPag" value="pix_avista"></td>
                 <td>Pix </td>
-                <td><input type="text" name="numCartão_credito" value="pix"></td>
+                <td><input type="text" name="pix" value="pix"></td>
                 <td>Numero do Pix</td><td>1920384657</td>
             </tr>
             <tr>
