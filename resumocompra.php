@@ -1,118 +1,143 @@
 <?php
 session_start();
 
-    $_SESSION ['dadospag']="";
-    $user = (isset($_SESSION['user']['user'])? $_SESSION['user']['user']:"");
-    $nome = (isset($_SESSION['user']['nome'])? $_SESSION['user']['nome']:"");
-    $end  = (isset($_SESSION['user']['end']) ? $_SESSION['user']['end']: "");
-    $valortotal = (isset($_SESSION['valortotal'])? $_SESSION['valortotal']:"");
+$_SESSION['dadospag'] = "";
 
-    $metpag = (isset($_SESSION['dadospag']['metpag']) ? $_SESSION['dadospag']['metpag']: "");
-    $numcartao_avista = (isset($_SESSION['dadospag']['numcartao_avista']) ? $_SESSION['dadospag']['numcartao_avista' ]: "");
-    $numcartao_credito= (isset($_SESSION['dadospag']['numcartao_credito'])? $_SESSION['dadospag']['numcartao_credito']: "");
+$usuario = (isset($_SESSION['usuario']['usuario'])? $_SESSION['usuario']['usuario']: "");
+$nome = (isset($_SESSION['usuario']['nome'])? $_SESSION['usuario']['nome']: "");
+$email = (isset($_SESSION['usuario']['email'])? $_SESSION['usuario']['email']: "");
+$telefone = (isset($_SESSION['usuario']['telefone']) ? $_SESSION['usuario']['telefone']: "");
+$endereco = (isset($_SESSION['usuario']['endereco'])? $_SESSION['usuario']['endereco']: "");
+$valorTotal = (isset($_SESSION['valortotal'])? $_SESSION['valortotal']: "");
+$metpag = (isset($_SESSION['dadospag1']['metpag'])? $_SESSION['dadospag1']['metpag']: "");
+$numcartao_avista = (isset($_SESSION['dadospag1']['numcartao-avista'])? $_SESSION['dadospag1']['numcartao-avista']: "");
+$numcartao_credito = (isset($_SESSION['dadospag1']['numcartao-credito'])? $_SESSION['dadospag1']['numcartao-credito']: "");
 
-    if(isset($_POST['confirmar'])){
-        header('location: confirmacao.php',true,303);   
-    }
+if(isset($_POST['confirmar'])) {
+    header('Location: confirmacao.php', true, 303);
+}
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE-edge'>
+    <title>Resumo Compra</title>
+    <meta name='viewport' content='width-device-width, initial-scale-1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main-css.css'>
+    <script src='main.js'></script>
 </head>
 <body>
+<table>
+    <tr>
+        <th colspan="2">Dados do Usuário</th>
+    </tr>
+    <tr>
+        <td>Usuário:</td>
+        <td><?php echo $usuario; ?></td>
+    </tr>
+    <tr>
+        <td>Nome completo:</td>
+        <td><?php echo $nome; ?></td>
+    </tr>
+    <tr>
+        <td>E-mail:</td>
+        <td><?php echo $email; ?></td>
+    </tr>
+    <tr>
+        <td>Telefone:</td>
+        <td><?php echo $telefone; ?></td>
+    </tr>
+    <tr>
+        <td>Endereço:</td>
+        <td><?php echo $endereco; ?></td>
+    </tr>
+</table>
+
+<br>
+
+<table>
+        <tr>
+            <th colspan="5">Itens da Compra</th>
+        </tr>
+        <tr>
+            <th>#</th>
+            <th>Núm. Item</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+        </tr>
+        <?php
+        $i = 0;
+        if(isset($_SESSION['itens'])){
+            foreach($_SESSION['itens'] as $item){
+        ?>
+        <tr>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $item ['ni']; ?></td>
+            <td><?php echo $item ['desc']; ?></td>
+            <td><?php echo $item ['qtd']; ?></td>
+            <td><?php echo $item ['preco']; ?></td>
+        </tr>
+        <?php
+            $i++;
+           }
+        }
+        ?>
+
+        <tr>
+            <th colspan="3"></th>
+            <th>Valor Total:</th>
+            <th><?php echo $valorTotal; ?></th>
+
+        </tr>
+    </table>  
+
+    <br>
+
     <table>
-        <tr>
-            <th colspan="2">Dados do Usuário</th>
-        </tr>
-        <tr>
-            <td>Usuário</td>
-            <td><?php echo $user?></td>
-        </tr>
-        <tr>
-            <td>Nome Completo</td>
-            <td><?php echo $nome?></td>
-        </tr>
-        <tr>
-            <td>Endereço</td>
-            <td><?php echo $end ?></td>
-        </tr>
-    </table>
-    <table>
-            <tr>
-                <th colpsan="5"> Itens da compra</th>
-            </tr>
-            <tr>
-                <th>#</th>
-                <th>Numero Item</th>
-                <th>Descrição</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-            </tr>
+    <tr>
+        <th colspan = "4">Dados do Pagamento</th>
+    </tr>
+    <tr>
+        <th>#</th>
+        <th>Método de Pagamento</th>
+        <th colspan = "2">Dados da Cobrança</th>
+    </tr>
+    <tr>
+        <td>#</td>
+        <td>
             <?php
-                $i=0;
-                if(isset($_SESSION['itens'])){
-                    foreach($_SESSION ['itens'] as $item){
-                        
-            ?>
-            <tr>
-                <td><?php echo $i ?></td>
-                <td><?php echo $item['ni'];?><td>
-                <td><?php echo $item['desc'];?></td>
-                <td><?php echo $item['qtd'];?></td>
-                <td><?php echo $item['preco'];?></td>
-            </tr>
-            <?php
-                $i++;
-                    }
+                if($metpag == "deb-avista"){
+                    echo "Débito à Vista";
+                }else if ($metpag == "credito"){
+                    echo "Crédito à Vista";
+                }else if ($metpag == "pix"){
+                    echo "PIX";
                 }
             ?>
-             <tr>
-                <th colspan="3"></th>
-                <th>Valor Total</th>
-                <th><td><?php echo $valortotal;?></td></th>
-            </tr>
-        </table>
+        </td>
+        <td>Número do Cartão</td>
+        <td>
+        <?php
+                if($metpag == "deb-avista"){
+                    echo $numcartao_avista;
+                }else if ($metpag == "credito"){
+                    echo $numcartao_credito;
+                }
+            ?>
+        </td>
+    </tr>
+    </table>
+
+    <form action="resumocompra.php" method="post">
         <table>
-            <tr>
-                <th colspan="4">Dados do Pagamento</th>
-            </tr>
-            <tr>
-                <th>#</th>
-                <th>Método de Pagamento</th>
-                <th colspan="2">Dados da cobrança</th>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>
-                    <?php
-                        if($metpag =="deb_avista"){echo "Débito a Vista";}
-                        else if($metpag =="credito"){echo "Crédito";}
-                        else if($metpag =="pix"){echo "pix";}
-                    ?>
-                </td>
-                <td>Debito à Vista</td>
-                <td>
-                    <?php
-                            if($metpag =="deb_avista"){echo "$numcartao_avista";}
-                            else if($metpag =="credito"){echo "$numcartao_credito";}
-                    ?>
-                </td>
-                <td>Numero do Cartão</td>
-            </tr>
-            </table>
-
-            <form action="resumocompra.php" method="post">
-                <table>
-                    <tr>
-                        <th colspan="4">Confirmar Compra</th>
-                        <td><input type="submit" name="confirmar" value="confirmar"></td>
-                    </tr>
-                </table>
-
-
-
-
+        <tr>
+            <td>Confirmar Comprar</td>
+            <td colspan="4"><input type="submit" name="confirmar" value="Confirmar"></td>
+        </tr>
+        </table>
+    </form>
 </body>
+</html>

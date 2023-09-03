@@ -1,95 +1,110 @@
 <?php
 session_start();
 
-    $_SESSION ['dadospag']="";
-    $user = (isset($_SESSION['user']['user'])? $_SESSION['user']['user']:"");
-    $nome = (isset($_SESSION['user']['nome'])? $_SESSION['user']['nome']:"");
-    $end  = (isset($_SESSION['user']['end']) ? $_SESSION['user']['end']: "");
-    $valortotal = (isset($_SESSION['valortotal']['valortotal'])? $_SESSION['valortotal']['valortotal']:"");
+$_SESSION['dadospag'] = "";
 
-    if(isset($_POST['pagar'])){
-        if(isset($_POST['metPag'])){
-                $metpag = $_POST['metpag'];
-                $numCartão_avista = (isset($_POST['numCartão_avista']) ? $_POST['numCartão_avista'] : "");
-                $numCartão_credito= (isset($_POST['numCartão_credito'])? $_POST['numCartão_credito']: "");
+$usuario = (isset($_SESSION['usuario']['usuario'])? $_SESSION['usuario']['usuario']: "");
+$nome = (isset($_SESSION['usuario']['nome'])? $_SESSION['usuario']['nome']: "");
+$email = (isset($_SESSION['usuario']['email'])? $_SESSION['usuario']['email']: "");
+$telefone = (isset($_SESSION['usuario']['telefone'])? $_SESSION['usuario']['telefone']: "");
+$endereco = (isset($_SESSION['usuario']['endereco'])? $_SESSION['usuario']['endereco']: "");
+$valorTotal = (isset($_SESSION['valortotal'])? $_SESSION['valortotal']: "");
 
-                $_SESSION ['dadospag'] = array('metpag' => $metpag,
-                                               'numCartão_avista' => $numCartão_avista,
-                                               'numCartão_credito' => $numCartão_credito);
-             
-                header('location: resumocompra.php',true,303);   
-        };      
+if(isset($_POST['pagar'])) {
+    if(isset($_POST['metpag'])) {
+        $metpag = $_POST['metpag'];
+        $numcartao_avista = (isset($_POST['numcartao-avista']) ? $_POST['numcartao-avista'] : "");
+        $numcartao_credito = (isset($_POST['numcartao-credito']) ? $_POST['numcartao-credito'] : "");
+    
+        $_SESSION['dadospag1'] = array('metpag' => $metpag,
+                                        'numcartao-avista' => $numcartao_avista,
+                                        'numcartao-credito' => $numcartao_credito);
+
+        header('Location: resumocompra.php', true, 303);
     }
+}
+
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel= "stylesheet" type= "text/css" media="screen" href="main-css.css">
+    <title>Usuario</title>
 </head>
 <body>
-    <h2>Dados Pagamento</h2>
-    <table>
-            <tr>
-                <th colspan="2">Dados do Usuário</th>
-            </tr>
-            <tr>
-                <td>Usuário</td>
-                <td><?php echo $user?></td>
-            </tr>
-            <tr>
-                <td>Nome Completo</td>
-                <td><?php echo $nome?></td>
-            </tr>
-            <tr>
-                <td>Endereço</td>
-                <td><?php echo $end ?></td>
-            </tr>
-        </table>
+<table>
+    <tr>
+        <th colspan="2">Dados do Usuário</th>
+    </tr>
+    <tr>
+        <td>Usuário:</td>
+        <td><?php echo $usuario; ?></td>
+    </tr>
+    <tr>
+        <td>Nome completo:</td>
+        <td><?php echo $nome; ?></td>
+    </tr>
+    <tr>
+        <td>E-mail:</td>
+        <td><?php echo $email; ?></td>
+    </tr>
+    <tr>
+        <td>Telefone:</td>
+        <td><?php echo $telefone; ?></td>
+    </tr>
+    <tr>
+        <td>Endereço:</td>
+        <td><?php echo $endereco; ?></td>
+    </tr>
+</table>
 
-        <form action="dadospag.php" method="post">
-        <table>
-            <tr>
-                <th colspan="4">Dados do Pagamento</th>
-            </tr>
-            <tr>
-                <th>#</th>
-                <th>Método de Pagamento</th>
-                <th colspan="2">Dados da cobrança</th>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td><input type="radio" name="metPag" value="deb_avista"></td>
-                <td>Debito à Vista</td>
-                <td><input type="text" name="numCartão_avista" value=""></td>
-                <td>Numero do Cartão</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td><input type="radio" name="metPag" value="cred_avista"></td>
-                <td>Crédito à Vista</td>
-                <td><input type="text" name="numCartão_credito" value=""></td>
-                <td>Numero do Cartão</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td><input type="radio" name="metPag" value="pix_avista"></td>
-                <td>Pix </td>
-                <td><input type="text" name="pix" value="pix"></td>
-                <td>Numero do Pix</td><td>1920384657</td>
-            </tr>
-            <tr>
-                <td colspan="2"></td>
-                <td>Valor Total</td>
-                <td><?php echo $valortotal;?></td>
-            </tr>
-            <tr>
-                <td colspan="4"><input type="submit" name="pagar" value="pagar"></td>
-            </tr>
+<form action="dadospag.php" method="post">
 
-        </table>
+<br>
 
+<table>
+
+    <tr>
+        <th colspan = "4">Dados do Pagamento</th>
+    </tr>
+    <tr>
+        <th>#</th>
+        <th>Métodos de Pagamento</th>
+        <th colspan = "2">Dados da Cobrança</th>
+    </tr>
+    <tr>
+        <td><input type = "radio" name = "metpag" value = "deb-avista"></td>
+        <td>Débito à Vista</td>
+        <td>Número do Cartão</td>
+        <td><input type = "text" name = "numcartao-avista"></td>
+    </tr>
+    <tr>
+        <td><input type = "radio" name = "metpag" value = "credito"></td>
+        <td>Crédito à Vista</td>
+        <td>Número do Cartão</td>
+        <td><input type = "text" name = "numcartao-credito"></td>
+    </tr>
+    <tr>
+        <td><input type = "radio" name = "metpag" value = "pix"></td>
+        <td>PIX</td>
+        <td>Chave do Pix</td>
+        <td>nomedaloja@gmail.com</td>
+    </tr>
+    <tr>
+        <th colspan="2"></th>
+        <th>Valor Total:</th>
+        <th><?php echo $valorTotal; ?></th>
+    </tr>
+    <tr>
+        <td colspan="4"><input type="submit" name="pagar" value="Pagar"></td>
+    </tr>
+</table>
+
+</form>
 
 </body>
 </html>

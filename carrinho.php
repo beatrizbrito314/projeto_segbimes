@@ -60,24 +60,67 @@ if($ni>0){
         </tr>
         <tr>
             <td>1</td>
+            <img src="imagens\gramofone" alt="">
             <td><input type="checkbox" name="ch0" ></td>
-            <td><input type="text" name="desc0" value="produto1" readonly></td>
+            <td><input type="text" name="desc0" value="Gramofone Clássico" readonly></td>
             <td><input type="number" name="qtd0" value="0" ></td>
-            <td><input type="text" name="preco0" value="99" readonly ></td>
+            <td><input type="text" name="preco0" value="2374.45" readonly ></td>
         </tr>
         <tr>
             <td>2</td>
             <td><input type="checkbox" name="ch1" ></td>
-            <td><input type="text" name="desc1" value="produto2" readonly></td>
+            <td><input type="text" name="desc1" value="Telefone De Disco" readonly></td>
             <td><input type="number" name="qtd1" value="0" ></td>
-            <td><input type="text" name="preco1" value="99" readonly ></td>
+            <td><input type="text" name="preco1" value="2030.90" readonly ></td>
         </tr>
         <tr>
             <td>3</td>
             <td><input type="checkbox" name="ch2" ></td>
-            <td><input type="text" name="desc2" value="produto3" readonly></td>
+            <td><input type="text" name="desc2" value="Telefone De Mesa" readonly></td>
             <td><input type="number" name="qtd2" value="0" ></td>
-            <td><input type="text" name="preco2" value="99" readonly ></td>
+            <td><input type="text" name="preco2" value="451.90" readonly ></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type="checkbox" name="ch3" ></td>
+            <td><input type="text" name="desc3" value="Maquina de Escrever Retrô" readonly></td>
+            <td><input type="number" name="qtd3" value="0" ></td>
+            <td><input type="text" name="preco3" value="238.25" readonly ></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input type="checkbox" name="ch4" ></td>
+            <td><input type="text" name="desc4" value="Rádio Estilo Retrô" readonly></td>
+            <td><input type="number" name="qtd4" value="0" ></td>
+            <td><input type="text" name="preco4" value="54880.00" readonly ></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><input type="checkbox" name="ch5" ></td>
+            <td><input type="text" name="desc5" value="Ampulheta Modelo Retrô" readonly></td>
+            <td><input type="number" name="qtd5" value="0" ></td>
+            <td><input type="text" name="preco5" value="451.90" readonly ></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type="checkbox" name="ch6" ></td>
+            <td><input type="text" name="desc6" value="Abbey Road Vinil" readonly></td>
+            <td><input type="number" name="qtd6" value="0" ></td>
+            <td><input type="text" name="preco6" value="131.90" readonly ></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input type="checkbox" name="ch7" ></td>
+            <td><input type="text" name="desc7" value="Navio Decoração Retrô" readonly></td>
+            <td><input type="number" name="qtd7" value="0" ></td>
+            <td><input type="text" name="preco7" value="290.00" readonly ></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><input type="checkbox" name="ch8" ></td>
+            <td><input type="text" name="desc8" value="Luminária Vintage" readonly></td>
+            <td><input type="number" name="qtd8" value="0" ></td>
+            <td><input type="text" name="preco8" value="389.00" readonly ></td>
         </tr>
         <tr>
             <td colspan="5">
