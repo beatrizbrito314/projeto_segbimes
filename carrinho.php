@@ -30,14 +30,14 @@ if(isset($_POST["comprar"])){
     }
 if($ni>0){
     $_SESSION['valortotal']= $valortotal;
-    header('location: user.php',true,303);
+    header('location: dadospag.php',true,303);
 }
 // echo 'valor total'. $valortotal;
 
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -104,7 +104,7 @@ if($ni>0){
       <!-- navbar -->
       <nav class="navbar navbar-expand-md" id="navbar">
         <!-- Brand -->
-        <a class="navbar-brand" href="#" id="logo"
+        <a class="navbar-brand" href="index.html" id="logo"
           ><img src="./image/Antique.png" alt="" width="50px" /> Antique
           Store</a
         >
@@ -142,13 +142,13 @@ if($ni>0){
             </li>
             <!-- dropdown -->
             <li class="nav-item">
-              <a class="nav-link" href="#">Galeria</a>
+              <a class="nav-link" href="galeria.html">Galeria</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sobre nós</a>
+              <a class="nav-link" href="sobrenos.html">Sobre nós</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Entre em contato</a>
+              <a class="nav-link" href="entremcont.html">Entre em contato</a>
             </li>
           </ul>
         </div>
@@ -316,7 +316,7 @@ if($ni>0){
 
       <!-- footer -->
       <footer id="footer" data-aos="fade-up" data-aos-duration="1500">
-        <h1 class="text-center">Cantina IFRN Cang</h1>
+        <h1 class="text-center">Antique Store</h1>
         <p class="text-center">
           Há 100 anos conservando e relembrando o passado através de objetos e
           experiências.

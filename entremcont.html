@@ -1,14 +1,9 @@
-
-<?php
-session_start();
-session_destroy();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Antique Store</title>
     <link rel="shortcut icon" type="image" href="./image/Logo.png" />
     <link rel="stylesheet" href="style.css" />
@@ -65,9 +60,9 @@ session_destroy();
     <!-- links de animação -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- links de animação -->
-</head>
-<body>
-<div class="all-content">
+  </head>
+  <body>
+    <div class="all-content">
       <!-- navbar -->
       <nav class="navbar navbar-expand-md" id="navbar">
         <!-- Brand -->
@@ -122,100 +117,86 @@ session_destroy();
       </nav>
       <!-- navbar end -->
 
- 
-                
- <!-- banner -->
- <div class="banner" data-aos="fade-up" data-aos-duration="1500">
-        <div class="content">
-          <h3>Obrigada por comprar conosco!</h3>
-        </div>
-        <div class="img">
-          <img src="image/BG2.png" alt="" />
-          </div>
-      </div>
-
 <!-- contact  -->
 <div
-        class="container"
-        id="contact"
-        data-aos="fade-up"
-        data-aos-duration="1500"
-      >
-        <h1>Entre em contato</h1>
-        <div class="row">
-          <div class="col-md-4 py-1 py-md-0">
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                id="usr"
-                placeholder="Nome"
-              />
-            </div>
-          </div>
-          <div class="col-md-4 py-1 py-md-0">
-            <div class="form-group">
-              <input
-                type="email"
-                class="form-control"
-                id="eml"
-                placeholder="Email"
-              />
-            </div>
-          </div>
-          <div class="col-md-4 py-1 py-md-0">
-            <div class="form-group">
-              <input
-                type="number"
-                class="form-control"
-                id="phn"
-                placeholder="Número"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <textarea
-            class="form-control"
-            rows="5"
-            id="comment"
-            placeholder="Mensagem"
-          ></textarea>
-        </div>
-        <div id="messagebtn"><button>Enviar</button></div>
-      </div>
-      <!-- contact end -->
-
-      <!-- footer -->
-      <footer id="footer" data-aos="fade-up" data-aos-duration="1500">
-        <h1 class="text-center">Antique Store</h1>
-        <p class="text-center">
-          Há 100 anos conservando e relembrando o passado através de objetos e
-          experiências.
-        </p>
-        <div class="icons text-center">
-          <i class="bx bxl-facebook"></i>
-          <i class="bx bxl-google"></i>
-          <i class="bx bxl-instagram"></i>
-        </div>
-        <div class="copyright text-center">
-          &copy; Copyright <strong>BFL S.A</strong> .Todos os direitos
-          reservados
-        </div>
-      </footer>
-      <!-- footer -->
-
-      <a href="#" class="arrow">
-        <i>
-          <img src="./image/up-arrow.png" alt="" width="50px" />
-        </i>
-      </a>
+class="container"
+id="contact"
+data-aos="fade-up"
+data-aos-duration="1500"
+>
+<h1>Entre em contato</h1>
+<div class="row">
+  <div class="col-md-4 py-1 py-md-0">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="usr"
+        placeholder="Nome"
+      />
+    </div>
+  </div>
+  <div class="col-md-4 py-1 py-md-0">
+    <div class="form-group">
+      <input
+        type="email"
+        class="form-control"
+        id="eml"
+        placeholder="Email"
+      />
+    </div>
+  </div>
+  <div class="col-md-4 py-1 py-md-0">
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        id="phn"
+        placeholder="Número"
+      />
+    </div>
+  </div>
 </div>
+<div class="form-group">
+  <textarea
+    class="form-control"
+    rows="5"
+    id="comment"
+    placeholder="Mensagem"
+  ></textarea>
+</div>
+<div id="messagebtn"><button>Enviar</button></div>
+</div>
+<!-- contact end -->
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+<!-- footer -->
+<footer id="footer" data-aos="fade-up" data-aos-duration="1500">
+<h1 class="text-center">Antique Store</h1>
+<p class="text-center">
+  Há 100 anos conservando e relembrando o passado através de objetos e
+  experiências.
+</p>
+<div class="icons text-center">
+  <i class="bx bxl-facebook"></i>
+  <i class="bx bxl-google"></i>
+  <i class="bx bxl-instagram"></i>
+</div>
+<div class="copyright text-center">
+  &copy; Copyright <strong>BFL S.A</strong> .Todos os direitos
+  reservados
+</div>
+</footer>
+<!-- footer -->
 
+<a href="#" class="arrow">
+<i>
+  <img src="./image/up-arrow.png" alt="" width="50px" />
+</i>
+</a>
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

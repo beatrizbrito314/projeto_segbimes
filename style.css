@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: "Uchen", serif;
   }
+  a{
+    color: inherit;
+  }
   .all-content {
     background: #101720;
   }
@@ -279,6 +282,21 @@
     color: white;
     text-shadow: 1px 1px 1px black;
   }
+
+  #product-cards h4 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-size: x-large;
+    text-align: center;
+    background-color:  #08151d;
+  }
+
+  #product-cards h5 {
+    color: white;
+    font-size: large;
+    text-align: center;
+  }
+
   .star .checked {
     color: rgb(26, 139, 192);
   }
@@ -310,7 +328,6 @@
     color: white;
   }
   
-  
   /* product cards end */
   
 /* cart cards */
@@ -337,20 +354,39 @@
     border-radius: 5px;
     box-shadow: 2px solid #0f222c;
     border: 2px solid #004164;
-    background-color:#7b6db0;
-    color: #101720;
+    background-color:#0c1d3d;
+    color: #d4e2f4;
 }
 
 .cart-input:hover{
     transform: translateY(-5px);
 
-    background-color:#801d93;
+    background-color:#597acd;
     transition: 0.5s ease;
 }
 
-input[type="checkbox"]:checked {
-    width: 25px;
+/*cart cards end*/
+
+/* user */
+.banner-user .content h3 {
+  color: white;
+  text-shadow: 1px 1px 1px black;
 }
+
+.banner-user  .content h4 {
+  color: white;
+  text-shadow: 1px 1px 1px rgb(15, 58, 107);
+  font-size: x-large;
+  text-align: center;
+  background-color:  #08151d;
+}
+
+.banner-user .content h5 {
+  color: white;
+  font-size: large;
+  text-align: center;
+}
+/* user end*/
 
   /* gallary */
   #gallary {

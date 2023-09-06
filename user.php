@@ -89,7 +89,7 @@ $_SESSION ['user']="";
       <!-- navbar -->
       <nav class="navbar navbar-expand-md" id="navbar">
         <!-- Brand -->
-        <a class="navbar-brand" href="#" id="logo"
+        <a class="navbar-brand" href="index.html" id="logo"
           ><img src="./image/Antique.png" alt="" width="50px" /> Antique
           Store</a
         >
@@ -127,82 +127,129 @@ $_SESSION ['user']="";
             </li>
             <!-- dropdown -->
             <li class="nav-item">
-              <a class="nav-link" href="#">Galeria</a>
+              <a class="nav-link" href="galeria.html">Galeria</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sobre nós</a>
+              <a class="nav-link" href="sobrenos.html">Sobre nós</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Entre em contato</a>
+              <a class="nav-link" href="entremcont.html">Entre em contato</a>
             </li>
           </ul>
         </div>
       </nav>
       <!-- navbar end -->
 
-    <form action="usuario.php" method="post">
-        <table>
-            <tr>
-                <th colspan="2">Dados do Usuário</th>
-            </tr>
-            <tr>
-                <td>Usuário</td>
-                <td><input type="text" name="user"  ></td>
-            </tr>
-            <tr>
-                <td>Nome Completo</td>
-                <td><input type="text" name="nome"  ></td>
-            </tr>
-            <tr>
-                <td>Endereço</td>
-                <td><input type="text" name="end"  ></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" name="logar" value="logar">
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <th colpsan="5"> Itens da compra</th>
-            </tr>
-            <tr>
-                <th>#</th>
-                <th>Numero Item</th>
-                <th>Descrição</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-            </tr>
-            <?php
-                $i=0;
-                if(isset($_SESSION['itens'])){
-                    foreach($_SESSION ['itens'] as $item){
-                        
-            ?>
-            <tr>
-                <td><?php echo $i ?></td>
-                <td><?php echo $item['ni'];?><td>
-                <td><?php echo $item['desc'];?></td>
-                <td><?php echo $item['qtd'];?></td>
-                <td><?php echo $item['preco'];?></td>
-            </tr>
-            <?php
-                $i++;
-                    }
-                }
-            ?>
-             <tr>
-                <th colspan="3"></th>
-                <th>Valor Total</th>
-                <th><td><?php echo $_SESSION ['valortotal'];?></td></th>
-            </tr>
-        </table>
-    </form>
+ 
+                
+ <!-- banner -->
+ <div class="banner" data-aos="fade-up" data-aos-duration="1500">
+        <div class="content">
+          <h3>Login</h3>
+          <form action="user.php" method="post">
+          <p>
+            <br />
+                <input type="text" placeholder="Usuário" name="user"  >
+            <br>
+        
+                <input type="text" placeholder="Nome Completo" name="nome"  >
+            <br>
+                
+                <input type="text" placeholder="Endereço" name="end"  >
+            
+              <br>
+                    <input align="center" style="width: 34%;" type="submit" name="logar" value="logar"><br>
+                    </form>           
+          </p>
+        </div>
+        <div class="img">
+          <img src="image/banner-background.png" alt="" />
+     
+          </div>
+      </div>
 
+<!-- contact  -->
+<div
+        class="container"
+        id="contact"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
+        <h1>Entre em contato</h1>
+        <div class="row">
+          <div class="col-md-4 py-1 py-md-0">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="usr"
+                placeholder="Nome"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 py-1 py-md-0">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="eml"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 py-1 py-md-0">
+            <div class="form-group">
+              <input
+                type="number"
+                class="form-control"
+                id="phn"
+                placeholder="Número"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            rows="5"
+            id="comment"
+            placeholder="Mensagem"
+          ></textarea>
+        </div>
+        <div id="messagebtn"><button>Enviar</button></div>
+      </div>
+      <!-- contact end -->
 
+      <!-- footer -->
+      <footer id="footer" data-aos="fade-up" data-aos-duration="1500">
+        <h1 class="text-center">Antique Store</h1>
+        <p class="text-center">
+          Há 100 anos conservando e relembrando o passado através de objetos e
+          experiências.
+        </p>
+        <div class="icons text-center">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-google"></i>
+          <i class="bx bxl-instagram"></i>
+        </div>
+        <div class="copyright text-center">
+          &copy; Copyright <strong>BFL S.A</strong> .Todos os direitos
+          reservados
+        </div>
+      </footer>
+      <!-- footer -->
 
+      <a href="#" class="arrow">
+        <i>
+          <img src="./image/up-arrow.png" alt="" width="50px" />
+        </i>
+      </a>
+</div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
 </body>
 </html>
