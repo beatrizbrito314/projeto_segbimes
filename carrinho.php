@@ -7,7 +7,7 @@ $_SESSION['valortotal']=0.0;
 $valortotal= 0.0;
 
 if(isset($_POST["comprar"])){
-    for($i=0;$i<4;$i++){
+    for($i=0;$i<10;$i++){
         if(isset($_POST['ch'.$i])){
             $c=$ni;
             $desc= $_POST['desc'.$i];
